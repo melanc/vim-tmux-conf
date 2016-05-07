@@ -26,3 +26,13 @@
 
 - Airline
 	> 状态栏、Buffer栏美化
+
+- Ubuntu下解决gvim底部白边问题
+	> vim ~/.gtkrc-2.0
+```
+style "vimfix" {
+    # this matches my gvim theme 'Normal' bg color.
+    bg[NORMAL] = "#002b36"                                                                                                                                                                    
+}
+widget "vim-main-window.*GtkForm" style "vimfix"
+```
