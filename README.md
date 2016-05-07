@@ -3,6 +3,8 @@
 
 ## 常用插件
 
+### 插件采用Vundle管理
+
 - ctags
 	> 函数跳转
 
@@ -38,4 +40,4 @@ widget "vim-main-window.*GtkForm" style "vimfix"
 ```
 
 - 我的vim
-![Vim配图](https://github.com/melanc/vimrc/gvim.png)
+![Vim配图](https://github.com/melanc/vimrc/blob/master/gvim.png)
