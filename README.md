@@ -36,3 +36,6 @@ style "vimfix" {
 }
 widget "vim-main-window.*GtkForm" style "vimfix"
 ```
+
+- 我的vim
+![Vim配图](https://github.com/melanc/vimrc/gvim.png)
