@@ -345,8 +345,7 @@ nmap <silent><F11> <Esc>:call ToggleFullScreen()<CR>
 
 " ------------------------ 快捷键定制 ------------------------------------
 " 文件浏览器
-set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc
-let g:netrw_list_hide =  '^\.[^\.],'                                
+let g:netrw_list_hide =  '^\.,^\.[^\.],'                                
 let g:netrw_list_hide .= '\.a$,\.so$,'    
 let g:netrw_list_hide .= '\.o$,\.obj$,' 
 let g:netrw_list_hide .= '\.a\s\+,\.so\s\+,'
