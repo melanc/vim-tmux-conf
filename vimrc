@@ -347,10 +347,10 @@ nmap <silent><F11> <Esc>:call ToggleFullScreen()<CR>
 " 文件浏览器
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc
 let g:netrw_list_hide =  '^\.[^\.],'                                
+let g:netrw_list_hide .= '\.a$,\.so$,'    
 let g:netrw_list_hide .= '\.o$,\.obj$,' 
-let g:netrw_list_hide .= '\.a$,\.so$,\.lib$,\.dll$,'    
+let g:netrw_list_hide .= '\.a\s\+,\.so\s\+,'
 let g:netrw_list_hide .= '\.o\s\+,\.obj\s\+,'         
-let g:netrw_list_hide .= '\.a\s\+,\.so\s\+,\.lib\s\+,\.dll\s\+,'
 let g:netrw_list_hide .= '^tags$,\.swp$,\.pyc$,\.git$,\.gitignore$'
 command! E Explore
 command! S Sexplore
