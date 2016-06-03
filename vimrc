@@ -54,12 +54,16 @@ set undolevels=100
 
 " 命令增强
 set wildmenu
+set wildignore+=*.o,*.so,*.obj,*.pyc,*.swp
 
 " 不自动添加空行
 set noendofline binary
 
 " 允许在有未保存的修改时切换缓冲区
 set hidden
+
+" 当运行宏时，不重绘
+set lazyredraw 
 
 " 除去启动信息
 set shortmess=atI
@@ -82,6 +86,10 @@ set laststatus=2
 " 自动切换当前目录
 set autochdir
 
+" 模式行
+set modeline
+set modelines=5
+
 " 定义<leader>快捷键
 let mapleader=","
 let g:mapleader=","
@@ -103,7 +111,6 @@ Plugin 'wincent/command-t'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'scrooloose/nerdtree'
 
 filetype plugin indent on
 " ---------------------------------- 外观定制 ---------------------------------
