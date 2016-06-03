@@ -345,12 +345,12 @@ nmap <silent><F11> <Esc>:call ToggleFullScreen()<CR>
 
 " ------------------------ 快捷键定制 ------------------------------------
 " 文件浏览器
-let g:netrw_list_hide =  '^\.,^\.[^\.],'                                
+let g:netrw_list_hide =  '^\..*,'                                
 let g:netrw_list_hide .= '\.a$,\.so$,'    
 let g:netrw_list_hide .= '\.o$,\.obj$,' 
 let g:netrw_list_hide .= '\.a\s\+,\.so\s\+,'
 let g:netrw_list_hide .= '\.o\s\+,\.obj\s\+,'         
-let g:netrw_list_hide .= '^tags$,\.swp$,\.pyc$,\.git$,\.gitignore$'
+let g:netrw_list_hide .= '\.pyc$,\.git$,\.gitignore$,tags$'
 command! E Explore
 command! S Sexplore
 command! V Vexplore
