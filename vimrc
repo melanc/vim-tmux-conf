@@ -118,7 +118,7 @@ filetype plugin indent on
 syntax on
 set background=dark
 
-if has('gui_running')
+" if has('gui_running')
     " 定制菜单，工具栏
     set guioptions-=m " 隐藏菜单栏
     set guioptions-=T " 隐藏工具栏
@@ -129,10 +129,10 @@ if has('gui_running')
 
     colorscheme solarized
 	set guifont=Dejavu\ Sans\ Mono\ for\ Powerline\ 14
-else
+" else
     set t_Co=256
-    colorscheme desert
-endif
+    " colorscheme solarized
+" endif
 " ------------------------------ 编码定制 --------------------------------
 set fileformats=unix,dos,mac
 nmap <leader>e :e $HOME/.vimrc<cr>
@@ -186,7 +186,7 @@ let delimitMate_matchpairs = "(:),[:],{:}"
 
 
 """ Plugin - command-T 文件查找
-nmap <leader>c :CommandT<CR>
+nmap <leader>t :CommandT<CR>
 
 
 """ Plugin-tagbar.vim 函数列表
@@ -243,12 +243,12 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 "打开tabline功能,方便查看Buffer和切换
-if has("gui_running")
+"if has("gui_running")
 	let g:airline#extensions#tabline#enabled = 1
 	let g:airline#extensions#tabline#left_sep = '⮀'
 	let g:airline#extensions#tabline#left_alt_sep = '⮁'
 	let g:airline#extensions#tabline#buffer_nr_show = 1
-endif
+"endif
 " 关闭状态显示空白符号计数
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
