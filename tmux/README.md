@@ -1,7 +1,7 @@
 # tmux
+配置： ~/.tmux.conf
 
 快捷键参考
-
 按下 Ctrl-b 后的快捷键如下：
 
 ```
@@ -43,12 +43,12 @@ t 在当前窗格显示时间
 希望这篇文章有助于你理解 tmux。
 
 
-（1）教程：
+(1)教程：
 http://cenalulu.github.io/linux/tmux/
 http://cenalulu.github.io/linux/mac-powerline/
 
 
-（2）Terminal安装solarized主题：
+(2)Terminal安装solarized主题：
 $ git clone git://github.com/seebi/dircolors-solarized.git
 $ cp ~/dircolors-solarized/dircolors.256dark ~/.dircolors
 $ eval 'dircolors .dircolors'
@@ -58,7 +58,7 @@ $ cd solarized-mate-terminal
 $ ./solarized-mate.sh dark
 
 
-（3）Powerline配置：
+(3)Powerline配置：
 安装：
 $ pip install powerline-status
 
@@ -80,7 +80,7 @@ fi
 可以覆盖系统配置： ~/.config/powerline/
 	  
 	  
-（4）字体安装：
+(4)字体安装：
 下載最新的 Powerline 字型以及 fontconfig 字型設定檔：
 	  
 $ wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
@@ -96,5 +96,7 @@ $ fc-cache -vf ~/.fonts/
 	  
 將字型設定檔放進適當的目錄：
 	  
-$ mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/}
+$ mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 
+(5)主题安装
+https://github.com/jimeh/tmux-themepack
