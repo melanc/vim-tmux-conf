@@ -1,5 +1,5 @@
 # tmux
-配置： ~/.tmux.conf
+配置文件： ~/.tmux.conf
 
 快捷键参考
 按下 Ctrl-b 后的快捷键如下：
