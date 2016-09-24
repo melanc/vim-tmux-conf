@@ -103,11 +103,11 @@ Plugin 'a.vim'
 Plugin 'c.vim'
 Plugin 'gmarik/vundle'
 Plugin 'fatih/vim-go'
+Plugin 'mattn/emmet-vim'
 Plugin 'dgryski/vim-godef'
 Plugin 'Blackrush/vim-gocode'
 Plugin 'melanc/delimit-mate'
 Plugin 'majutsushi/tagbar'
-Plugin 'wincent/command-t'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -128,7 +128,7 @@ set background=dark
     set showtabline=0 " 隐藏Tab栏
 
     colorscheme solarized
-	set guifont=Dejavu\ Sans\ Mono\ for\ Powerline\ 14
+	set guifont=Monaco\ for\ Powerline\ 13
 " else
     set t_Co=256
     " colorscheme solarized
@@ -164,10 +164,10 @@ endif
 
 
 " ------------------------------ 基本设置 --------------------------------
-" disbale paste mode when leaving insert mode
+""" disbale paste mode when leaving insert mode
 au InsertLeave * set nopaste
 
-"" 记住上次文件位置
+""" 记住上次文件位置
 augroup vimrcEx
 	au!
 	autocmd FileType text setlocal textwidth=78
@@ -177,17 +177,28 @@ augroup vimrcEx
 				\ endif
 augroup END
 
-" 设置文件Tab宽度
+""" 设置文件Tab宽度
 autocmd FileType c,cpp,go,php,python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+""" 代码折叠
+" zr    打开所有折叠
+" zm    关闭所有折叠
+" zc    折叠
+" zC    对所在范围内所有嵌套的折叠点进行折叠
+" zo    展开折叠
+" zO    对所在范围内所有嵌套的折叠点展开
+" zj    向下移动。到达下一个折叠的开始处
+" zk    向上移动到前一折叠的结束处
 
 " ---------------------------- 插件设置 -------------------------------
 """ Plugin - delimitMate 自动补全括号
 let delimitMate_matchpairs = "(:),[:],{:}"
 
 
-""" Plugin - command-T 文件查找
-nmap <leader>t :CommandT<CR>
-
+""" emmet-vim - 前端开发
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='<C-Q>'
 
 """ Plugin-tagbar.vim 函数列表
 let g:tagbar_width = 25
@@ -245,8 +256,8 @@ endif
 "打开tabline功能,方便查看Buffer和切换
 "if has("gui_running")
 	let g:airline#extensions#tabline#enabled = 1
-	let g:airline#extensions#tabline#left_sep = '⮀'
-	let g:airline#extensions#tabline#left_alt_sep = '⮁'
+	let g:airline#extensions#tabline#left_sep = ''
+	let g:airline#extensions#tabline#left_alt_sep = '|'
 	let g:airline#extensions#tabline#buffer_nr_show = 1
 "endif
 " 关闭状态显示空白符号计数
@@ -377,6 +388,5 @@ exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
 exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 
 " 切换Buffer
-nmap <C-TAB> <Esc>:bn<CR>
-nmap <S-TAB> <Esc>:bp<CR>
+nmap <S-TAB> <Esc>:bn<CR>
 
