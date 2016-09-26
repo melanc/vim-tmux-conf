@@ -390,3 +390,10 @@ exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 " 切换Buffer
 nmap <S-TAB> <Esc>:bn<CR>
 
+" 保存会话
+let session_file = $HOME.'/.vim/session/Session.vim'
+set sessionoptions=buffers,curdir,resize,folds,tabpages  
+autocmd VimLeave * exec "mks! " . session_file
+" 恢复会话
+nmap <leader>r :exec "source " . session_file<cr>
+
