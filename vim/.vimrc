@@ -135,7 +135,7 @@ set background=dark
 " endif
 " ------------------------------ 编码定制 --------------------------------
 set fileformats=unix,dos,mac
-nmap <leader>e :e $HOME/.vimrc<cr>
+nmap <leader>e :e $HOME/.vimrc<CR>
 let $VIMFILES = $HOME.'/.vim'
 
 if has("multi_byte")
@@ -244,7 +244,7 @@ let g:tagbar_type_go = {
 	\ 'ctagsargs' : '-sort -silent'  
 \ }  
 
-nmap <leader>g :GoDef<cr>
+nmap <leader>g :GoDef<CR>
 
 
 """ Plugin - airline 状态栏美化
@@ -393,7 +393,8 @@ nmap <S-TAB> <Esc>:bn<CR>
 " 保存会话
 let session_file = $HOME.'/.vim/session/Session.vim'
 set sessionoptions=buffers,curdir,resize,folds,tabpages  
-autocmd VimLeave * exec "mks! " . session_file
+" autocmd VimLeave * exec "mks! " . session_file
+nmap <leader>s :exec "mks! " . session_file<CR>
 " 恢复会话
-nmap <leader>r :exec "source " . session_file<cr>
+nmap <leader>r :exec "source " . session_file<CR>
 
