@@ -394,7 +394,7 @@ nmap <S-TAB> <Esc>:bn<CR>
 let session_file = $HOME.'/.vim/session/Session.vim'
 set sessionoptions=buffers,curdir,resize,folds,tabpages  
 " autocmd VimLeave * exec "mks! " . session_file
-nmap <leader>s :exec "mks! " . session_file<CR>
+nmap <leader>m :exec "mks! " . session_file<CR>
 " 恢复会话
 nmap <leader>r :exec "source " . session_file<CR>
 
