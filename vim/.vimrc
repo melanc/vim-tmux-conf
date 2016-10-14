@@ -90,6 +90,11 @@ set autochdir
 set modeline
 set modelines=5
 
+" 基于语法进行代码折叠
+set foldmethod=syntax
+" 启动vim时关闭折叠
+set nofoldenable
+
 " 定义<leader>快捷键
 let mapleader=","
 let g:mapleader=","
@@ -101,13 +106,16 @@ call vundle#rc()
 " let Vundle manage Vundle  
 Plugin 'a.vim'
 Plugin 'c.vim'
+Plugin 'vimprj'
+Plugin 'DfrankUtil'
+Plugin 'narwhales/indexer'
 Plugin 'gmarik/vundle'
 Plugin 'fatih/vim-go'
 Plugin 'mattn/emmet-vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'dgryski/vim-godef'
 Plugin 'Blackrush/vim-gocode'
-Plugin 'melanc/delimit-mate'
-Plugin 'majutsushi/tagbar'
+Plugin 'narwhales/delimit-mate'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -200,11 +208,26 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key='<C-Q>'
 
+
 """ Plugin-tagbar.vim 函数列表
 let g:tagbar_width = 25
 let g:tagbar_autofocus = 1
 let g:tagbar_ctags_bin = 'ctags'
 nmap <silent><F8> <Esc>:TagbarToggle<CR>
+
+
+""" Plugin - indexer自动更新tags
+" set tags+=~/.vim/tags
+" 设置indexer调用ctags的参数
+" 默认--c++-kinds=+p+l，设置为--c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v
+" 默认--fields=+iaS不满足YCM要求，需改为--fields=+iaSl
+" 标签跳转: ctrl-]，tn向后，tp向前
+" 返回：ctrl-t，返回到上次光标位置；ctrl-o，返回到上个标签
+" 再次进入: ctrl-i
+let g:indexer_ctagsCommandLineOptions="--c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+iaSl --extra=+q"
+
+nmap <leader>jc :YcmCompleter GoToDeclaration<CR>
+nmap <leader>jd :YcmCompleter GoToDefinition<CR>
 
 
 """ Plugin - vim-go golang语言支持
@@ -311,15 +334,6 @@ let g:ycm_filetype_blacklist = {
  
 
 " ------------------------ 自定义函数 ------------------------------------
-" 生成: tags
-set tags+=tags;
-func! UpdateTags() 
-	silent !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
-	echo "Update Tags Done!"
-endfunc 
-nmap <silent><F6> <Esc>:call UpdateTags()<CR>
-
-
 " 批量删除: buffer
 func! DeleteAllBuffers() 
 	let s:curWinNr = winnr() 
