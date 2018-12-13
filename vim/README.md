@@ -29,6 +29,15 @@
 - Airline
 	> 状态栏、Buffer栏美化
 
+- 安装包管理工具
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+- 安装Ctags
+wget http://prdownloads.sourceforge.net/ctags/ctags-5.6.tar.gz
+tar zxvf ctags-5.6.tar.gz
+cd ctags-5.6
+./configure && make && make install
+
 - Ubuntu下解决gvim底部白边问题
 	> vim ~/.gtkrc-2.0
 ```
