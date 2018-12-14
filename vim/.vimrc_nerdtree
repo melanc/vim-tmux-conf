@@ -93,7 +93,7 @@ call vundle#rc()
 " let Vundle manage Vundle  
 Plugin 'a.vim'
 Plugin 'c.vim'
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'melanc/vim-go'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
