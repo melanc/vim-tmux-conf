@@ -33,6 +33,8 @@
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+Launch vim and run :PluginInstall
+
 - 安装Ctags
 
 wget http://prdownloads.sourceforge.net/ctags/ctags-5.6.tar.gz
