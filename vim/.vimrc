@@ -100,7 +100,7 @@ let mapleader=","
 let g:mapleader=","
 
 " ---------------------------- 插件管理 -------------------------------------
-set rtp+=~/.vim/bundle/vundle/  
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()  
 
 " let Vundle manage Vundle  
